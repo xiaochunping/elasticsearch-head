@@ -6883,7 +6883,7 @@ jQuery.extend({
 		isLocal: rlocalProtocol.test( ajaxLocParts[ 1 ] ),
 		global: true,
 		type: "GET",
-		contentType: "application/x-www-form-urlencoded",
+		contentType: "application/json;charset=UTF-8",
 		processData: true,
 		async: true,
 		/*
@@ -7570,7 +7570,7 @@ jQuery.ajaxSetup({
 // Detect, normalize options and install callbacks for jsonp requests
 jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
-	var inspectData = s.contentType === "application/x-www-form-urlencoded" &&
+	var inspectData = s.contentType === "application/json;charset=UTF-8" &&
 		( typeof s.data === "string" );
 
 	if ( s.dataTypes[ 0 ] === "jsonp" ||
